@@ -125,7 +125,7 @@ du -a ubuntu/usr/share/ca-certificates | sed 's/ubuntu\/usr\/share\/ca-certifica
  >>  ubuntu/etc/ca-certificates.conf
 
 
-cp -R  ubuntu /compat
+cp -R  ubuntu /compat/
 chroot /compat/ubuntu locale-gen en_US.UTF-8
 chroot /compat/ubuntu locale-gen ru_RU.UTF-8
 chroot /compat/ubuntu /bin/dbus-uuidgen --ensure
