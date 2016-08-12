@@ -1,22 +1,14 @@
-*** Steam on FreeBSD 11.0
- 
- nvidia-driver or  xf86-video-ati
- 
- pkg install doas 
- 
- create /usr/local/etc/doas.conf :
- 
- permit nopass keepenv yourusername 
- 
- 
- 
- doas tar -zxvf steam.tar.gz  -C /
- 
- steam
+### Steam on FreeBSD 11.0
 
-./install.sh
+#### Quick installation instructions
+
+You need to have a recent nvidia-driver with LINUX compatibality support or an AMD graphics card that is supported by FreeBSD. See [FreeBSD Wiki](https://wiki.freebsd.org/Graphics) for further information. 
  
- ./steamrun
+* Run the install.sh as root.
+* Extract steam.tar.gz as root: tar -zxvf steam.tar.gz  -C /
+* Start steam with ./steamrun as normal user.
+ 
+___
 
 
 
