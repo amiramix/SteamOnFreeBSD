@@ -1,4 +1,4 @@
-** Steam on FreeBSD 11.0
+*** Steam on FreeBSD 11.0
  
  nvidia-driver or  xf86-video-ati
  
