@@ -118,21 +118,21 @@ ln -s    bash                              ubuntu/bin/sh
 
 
 
-doas chroot ubuntu /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
+chroot ubuntu /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
  >  ubuntu/usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders.cache
 
 du -a ubuntu/usr/share/ca-certificates | sed 's/ubuntu\/usr\/share\/ca-certificates\///' |  awk '{print $2}' \
  >>  ubuntu/etc/ca-certificates.conf
 
 
-doas cp -R  ubuntu /compat
-doas chroot /compat/ubuntu locale-gen en_US.UTF-8
-doas chroot /compat/ubuntu locale-gen ru_RU.UTF-8
-doas chroot /compat/ubuntu /bin/dbus-uuidgen --ensure
+cp -R  ubuntu /compat
+chroot /compat/ubuntu locale-gen en_US.UTF-8
+chroot /compat/ubuntu locale-gen ru_RU.UTF-8
+chroot /compat/ubuntu /bin/dbus-uuidgen --ensure
 
 
-doas mkdir  /compat/ubuntu/tmp
-doas chroot /compat/ubuntu update-ca-certificates
-doas chroot /compat/ubuntu update-ca-certificates
+mkdir  /compat/ubuntu/tmp
+chroot /compat/ubuntu update-ca-certificates
+chroot /compat/ubuntu update-ca-certificates
 
 
