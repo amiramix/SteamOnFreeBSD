@@ -158,10 +158,10 @@ ln -s         ../lib/x86_64-linux-gnu/ld-2.19.so   $ubuntu/lib64/ld-linux-x86-64
 
 
 
-doas chroot $ubuntu /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
+chroot $ubuntu /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
  >  $ubuntu/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders.cache
 
-doas chroot $ubuntu /usr/lib32/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
+chroot $ubuntu /usr/lib32/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
  >  ubuntu/usr/lib32/gdk-pixbuf-2.0/2.10.0/loaders.cache
 
 du -a $ubuntu/usr/share/ca-certificates | sed "s/$ubuntu\/usr\/share\/ca-certificates\///" |  awk '{print $2}' \
@@ -174,12 +174,12 @@ cp -rf      ubuntu/usr/lib/i386-linux-gnu/*  $ubuntu/usr/lib32
 cp -rf      ubuntu/lib/i386-linux-gnu/*      $ubuntu/usr/lib32
 rm          $ubuntu/bin/sh
 
-doas cp -R  $ubuntu /compat/
-doas chroot /compat/$ubuntu locale-gen en_US.UTF-8
-doas chroot /compat/$ubuntu locale-gen ru_RU.UTF-8
-doas chroot /compat/$ubuntu /bin/dbus-uuidgen --ensure
+cp -R  $ubuntu /compat/
+chroot /compat/$ubuntu locale-gen en_US.UTF-8
+chroot /compat/$ubuntu locale-gen ru_RU.UTF-8
+chroot /compat/$ubuntu /bin/dbus-uuidgen --ensure
 
 
-doas chroot /compat/$ubuntu update-ca-certificates
-doas chroot /compat/$ubuntu update-ca-certificates
+chroot /compat/$ubuntu update-ca-certificates
+chroot /compat/$ubuntu update-ca-certificates
 
