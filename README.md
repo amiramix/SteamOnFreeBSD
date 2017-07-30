@@ -15,7 +15,7 @@ Create /usr/local/etc/doas.conf :
   
 And add:
 
-`echo 'permit nopass keepenv yourusername >> /usr/local/etc/doas.conf'` 
+`echo 'permit nopass keepenv yourusername' >> /usr/local/etc/doas.conf` 
  
 Download Steam: 
  
